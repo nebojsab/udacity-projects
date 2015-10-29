@@ -1,0 +1,90 @@
+/*Google fonts*/
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
+
+/*General styles*/
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#wrapp,
+.navbar-max-width{
+    max-width: 1090px;
+    margin: 0 auto;
+}
+
+/*======Header=======*/
+
+header{
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e7e7e7;
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 100%;
+}
+.header-top-title h1{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 48px;
+    text-transform: uppercase;
+    text-align: right;
+    color: #c1c1c1;
+}
+.header-top-title h3{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-align: right;
+    color: #333;
+}
+a.logo{
+    background: url('../images/logo.png') top left no-repeat;
+    width: 130px;
+    height: 130px;
+    display: block;
+}
+
+/*======End Header=======*/
+
+/*======Content section=======*/
+
+section{
+    margin-bottom: 20px
+}
+.row{
+    padding: 0 !important;
+}
+h2{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: left;
+    color: #333;
+}
+.featured-work .additional-margin{
+    margin-bottom: 20px
+}
+.featured-work p > a{
+    color: #696969 !important;
+    text-align: center !important;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+.featured-work h2{
+    color: #c1c1c1 !important;
+    text-align: center !important;
+}
+
+/*======End Content section=======*/
+
+/*======Custom Modal Width=======*/
+
+.modal-dialog.custom-modal-width{
+    width: 900px;
+}
