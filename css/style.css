@@ -1,7 +1,11 @@
+/*Google Fonts*/
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,100);
+/*END Google Fonts*/
+
 * {
   padding:0;
   margin:0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 .clear{
   clear: both;
@@ -15,9 +19,37 @@
   padding-right: 5%;
 }
 
+#main{
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+#main #map{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.floatMe{
+  float: left;
+  width: 100%;
+}
+
+#header .text-color{
+  color: #ffffff;
+}
+
+#footerContacts .text-color{
+  color: #000000;
+}
+
+.title{
+  font-size: 20px;
+  width: 100%;
+}
+
 h1 {
   font-size: 40px;
-  color: #F5A623;
+  color: #F5A623 !important;
   line-height: 48px;
   display: inline;
 }
@@ -57,6 +89,7 @@ h2, h3, h4, h5 {
   color: #999999;
   line-height: 16px;
   float: left;
+  width: 100%;
 }
 
 .location-text {
@@ -65,7 +98,12 @@ h2, h3, h4, h5 {
   color: #999999;
   line-height: 16px;
   float: right;
-
+}
+.location-text:before {
+  font-family: FontAwesome;
+  content:"\f041";
+  font-style: normal;
+  padding-right: 3px;
 }
 
 p {
@@ -94,7 +132,7 @@ a {
 }
 
 .orange {
-  background-color: #F5AE23;
+  background-color: #d9edf7;
 }
 
 .orange-text {
@@ -113,12 +151,12 @@ a {
 }
 
 .dark-gray {
-  background-color: #4A4A4A;
+  background-color: transparent;
 }
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #245269;
 }
 
 .flex-box {

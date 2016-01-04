@@ -19,7 +19,7 @@ var personal = {
     },
     biopic: "images/profileImg.jpg",
     welcome: "Welcome to my Online Resume",
-    skills: ["Web Design", "Graphic Design", "Photoshop", "Illustrator", "HTML", "CSS", "Bootstrap", "PHP (novice)"]
+    skills: ["<i class='fa fa-paint-brush orange-text'></i> Web Design", "<i class='fa fa-pencil orange-text'></i> Graphic Design", "<i class='fa fa-file-image-o orange-text'></i> Photoshop", "<i class='fa fa-object-group orange-text'></i> Illustrator", "<i class='fa fa-html5 orange-text'></i> HTML", "<i class='fa fa-css3 orange-text'></i> CSS", "<i class='fa fa-bold orange-text'></i> Bootstrap", "<i class='fa fa-code orange-text'></i> PHP (novice)"]
 };
 
 var formattedName = HTMLheaderName.replace("%data%", personal.name);
@@ -41,6 +41,12 @@ $("#topContacts").prepend(formattedTwitter);
 $("#topContacts").prepend(formattedGithub);
 $("#topContacts").prepend(formattedWWW);
 $("#topContacts").prepend(formattedLocation);
+$("#footerContacts").prepend(formattedMobile);
+$("#footerContacts").prepend(formattedEmail);
+$("#footerContacts").prepend(formattedTwitter);
+$("#footerContacts").prepend(formattedGithub);
+$("#footerContacts").prepend(formattedWWW);
+$("#footerContacts").prepend(formattedLocation);
 $("#header").append(formattedPic);
 $("#header").append(formattedWelcome);
 
@@ -54,12 +60,12 @@ if (personal.skills.length > 0) {
 
 var work = {
     "carrier": [{
-            "title": "QA",
-            "employer": "Script Server Development",
-            "dates": "2007-2008",
-            "location": "Serbia, Belgrade",
-            "description": "QA for CMS solution developed for Denmark client."
-        },
+        "title": "QA",
+        "employer": "Script Server Development",
+        "dates": "2007-2008",
+        "location": "Serbia, Belgrade",
+        "description": "QA for CMS solution developed for Denmark client."
+    },
         {
             "title": "QA, System Administrator",
             "employer": "Embroker d.o.o.",
@@ -106,29 +112,25 @@ var edu = {
         "title": "OS 20. Oktobar",
         "degree": "BA",
         "dates": "1991",
-        "location": "Serbia, Belgrade",
-        "major": ""
+        "location": "Serbia, Belgrade"
     },
         {
             "title": "LINK Computers",
             "degree": "PC Engineer",
             "dates": "2005",
-            "location": "Serbia, Belgrade",
-            "major": ""
+            "location": "Serbia, Belgrade"
         },
         {
             "title": "Microsoft",
             "degree": "MCTS",
             "dates": "2010",
-            "location": "Serbia, Belgrade",
-            "major": ""
+            "location": "Serbia, Belgrade"
         },
         {
             "title": "Udacity",
             "degree": "Front-end Developer",
             "dates": "2015-2016",
-            "location": "Serbia, Belgrade",
-            "major": ""
+            "location": "Serbia, Belgrade"
         }
     ]
 };
@@ -141,39 +143,37 @@ edu.display = function () {
             var formattedDegree = HTMLschoolDegree.replace("%data%", edu.schools[i].degree);
             var formattedSchoolDates = HTMLschoolDates.replace("%data%", edu.schools[i].dates);
             var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", edu.schools[i].location);
-            var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", edu.schools[i].major[0]);
             $(".education-entry:last").append(formattedSchoolName + formattedDegree);
             $(".education-entry:last").append(formattedSchoolDates);
             $(".education-entry:last").append(formattedSchoolLocation);
-            $(".education-entry:last").append(formattedSchoolMajor);
         }
     }
 };
 
 var projects = {
     "activity": [{
+        "title": "Udacity About Me",
+        "dates": "2015",
+        "description": "Create About Me personal page",
+        "image": "images/project.png"
+    },
+        {
             "title": "Udacity About Me",
             "dates": "2015",
             "description": "Create About Me personal page",
-            "image": ""
+            "image": "images/project.png"
         },
         {
             "title": "Udacity About Me",
             "dates": "2015",
             "description": "Create About Me personal page",
-            "image": ""
+            "image": "images/project.png"
         },
         {
             "title": "Udacity About Me",
             "dates": "2015",
             "description": "Create About Me personal page",
-            "image": ""
-        },
-        {
-            "title": "Udacity About Me",
-            "dates": "2015",
-            "description": "Create About Me personal page",
-            "image": ""
+            "image": "images/project.png"
         }
     ]
 };
