@@ -29,25 +29,25 @@ var HTMLWelcomeMsg = '<span class="welcome-message">%data%</span>';
 var HTMLskillsStart = '<h3 id="skillsH3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
 var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
 
-var HTMLworkStart = '<div class="work-entry"></div>';
+var HTMLworkStart = '<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3"><div class="work-entry"></div></div>';
 var HTMLworkEmployer = '<a class="title pull-left" href="#">%data%';
 var HTMLworkTitle = ' - %data%</a>';
 var HTMLworkDates = '<div class="date-text pull-left">%data%</div>';
-var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
+var HTMLworkLocation = '<div class="location-text">%data%</div>';
 
-var HTMLprojectStart = '<div class="project-entry col-xs-6 col-sm-4 col-md-3 col-lg-3 text-center"></div>';
+var HTMLprojectStart = '<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 text-center"><div class="project-entry"></div></div>';
 var HTMLprojectTitle = '<a class="title" href="#">%data%</a>';
 var HTMLprojectDates = '<div class="text-center">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<img class="img-responsive" src="%data%">';
 
-var HTMLschoolStart = '<div class="education-entry"></div>';
+var HTMLschoolStart = '<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3"><div class="education-entry"></div></div>';
 var HTMLschoolName = '<a class="title pull-left" href="#">%data%';
-var HTMLschoolDegree = ' -- %data%</a>';
+var HTMLschoolDegree = ' - %data%</a>';
 var HTMLschoolDates = '<div class="date-text pull-left">%data%</div>';
-var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 var HTMLschoolMajor = '<em><br>Major: %data%</em>';
+var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 
 var HTMLonlineClasses = '<h3>Online Classes</h3>';
 var HTMLonlineTitle = '<a href="#">%data%';

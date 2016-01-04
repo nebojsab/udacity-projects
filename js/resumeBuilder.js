@@ -101,8 +101,8 @@ work.display = function () {
             var formattedDescription = HTMLworkDescription.replace("%data%", work.carrier[i].description);
             $(".work-entry:last").append(formattedemployer + formattedWorkTitle);
             $(".work-entry:last").append(formattedDates);
-            $(".work-entry:last").append(formattedWorkLocation);
             $(".work-entry:last").append(formattedDescription);
+            $(".work-entry:last").append(formattedWorkLocation);
         }
     }
 };
