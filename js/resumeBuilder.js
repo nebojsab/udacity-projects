@@ -22,8 +22,38 @@ var personal = {
     skills: ["Web Design", "Graphic Design", "Photoshop", "Illustrator", "HTML", "CSS", "Bootstrap", "PHP (novice)"]
 };
 
+var formattedName = HTMLheaderName.replace("%data%", personal.name);
+var formattedRole = HTMLheaderRole.replace("%data%", personal.role);
+var formattedMobile = HTMLmobile.replace("%data%", personal.contacts.mobile);
+var formattedEmail = HTMLemail.replace("%data%", personal.contacts.email);
+var formattedTwitter = HTMLtwitter.replace("%data%", personal.contacts.twitter);
+var formattedGithub = HTMLgithub.replace("%data%", personal.contacts.github);
+var formattedWWW = HTMLblog.replace("%data%", personal.contacts.www);
+var formattedLocation = HTMLlocation.replace("%data%", personal.contacts.location);
+var formattedPic = HTMLbioPic.replace("%data%", personal.biopic);
+var formattedWelcome = HTMLWelcomeMsg.replace("%data%", personal.welcome);
+
+$("#header").append(formattedName);
+$("#header").append(formattedRole);
+$("#topContacts").prepend(formattedMobile);
+$("#topContacts").prepend(formattedEmail);
+$("#topContacts").prepend(formattedTwitter);
+$("#topContacts").prepend(formattedGithub);
+$("#topContacts").prepend(formattedWWW);
+$("#topContacts").prepend(formattedLocation);
+$("#header").append(formattedPic);
+$("#header").append(formattedWelcome);
+
+if (personal.skills.length > 0) {
+    $("#header").append(HTMLskillsStart);
+    for (var i = 0; i < personal.skills.length; i++) {
+        var fortmattedSkills = HTMLskills.replace("%data%", personal.skills[i]);
+        $("#skills").append(fortmattedSkills);
+    }
+}
+
 var work = {
-    "carrier":[{
+    "carrier": [{
             "title": "QA",
             "employer": "Script Server Development",
             "dates": "2007-2008",
@@ -52,40 +82,9 @@ var work = {
             "description": "Web and Graphic Designer for Embroker insurance app."
         }
     ]
-}
+};
 
-var formattedName = HTMLheaderName.replace("%data%", personal.name);
-var formattedRole = HTMLheaderRole.replace("%data%", personal.role);
-var formattedMobile = HTMLmobile.replace("%data%", personal.contacts.mobile);
-var formattedEmail = HTMLemail.replace("%data%", personal.contacts.email);
-var formattedTwitter = HTMLtwitter.replace("%data%", personal.contacts.twitter);
-var formattedGithub = HTMLgithub.replace("%data%", personal.contacts.github);
-var formattedWWW = HTMLblog.replace("%data%", personal.contacts.www);
-var formattedLocation = HTMLlocation.replace("%data%", personal.contacts.location);
-var formattedPic = HTMLbioPic.replace("%data%", personal.biopic);
-var formattedWelcome = HTMLWelcomeMsg.replace("%data%", personal.welcome);
-
-$("#header").append(formattedName);
-$("#header").append(formattedRole);
-$("#topContacts").prepend(formattedMobile);
-$("#topContacts").prepend(formattedEmail);
-$("#topContacts").prepend(formattedTwitter);
-$("#topContacts").prepend(formattedGithub);
-$("#topContacts").prepend(formattedWWW);
-$("#topContacts").prepend(formattedLocation);
-$("#header").append(formattedPic);
-$("#header").append(formattedWelcome);
-$("#workExperience").append(HTMLworkStart);
-
-if(personal.skills.length > 0){
-    $("#header").append(HTMLskillsStart);
-    for(var i = 0; i < personal.skills.length; i++){
-        var fortmattedSkills = HTMLskills.replace("%data%", personal.skills[i]);
-        $("#skills").append(fortmattedSkills);
-    }
-}
-
-work.display = function() {
+work.display = function () {
     if (work.carrier.length > 0) {
         for (var i = 0; i < work.carrier.length; i++) {
             $("#workExperience").append(HTMLworkStart);
@@ -95,11 +94,136 @@ work.display = function() {
             var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.carrier[i].location);
             var formattedDescription = HTMLworkDescription.replace("%data%", work.carrier[i].description);
             $(".work-entry:last").append(formattedemployer + formattedWorkTitle);
-            $(".work-entry:last").append(formattedWorkLocation);
             $(".work-entry:last").append(formattedDates);
+            $(".work-entry:last").append(formattedWorkLocation);
             $(".work-entry:last").append(formattedDescription);
         }
     }
-}
+};
+
+var edu = {
+    "schools": [{
+        "title": "OS 20. Oktobar",
+        "degree": "BA",
+        "dates": "1991",
+        "location": "Serbia, Belgrade",
+        "major": ""
+    },
+        {
+            "title": "LINK Computers",
+            "degree": "PC Engineer",
+            "dates": "2005",
+            "location": "Serbia, Belgrade",
+            "major": ""
+        },
+        {
+            "title": "Microsoft",
+            "degree": "MCTS",
+            "dates": "2010",
+            "location": "Serbia, Belgrade",
+            "major": ""
+        },
+        {
+            "title": "Udacity",
+            "degree": "Front-end Developer",
+            "dates": "2015-2016",
+            "location": "Serbia, Belgrade",
+            "major": ""
+        }
+    ]
+};
+
+edu.display = function () {
+    if (edu.schools.length > 0) {
+        for (var i = 0; i < edu.schools.length; i++) {
+            $("#education").append(HTMLschoolStart);
+            var formattedSchoolName = HTMLschoolName.replace("%data%", edu.schools[i].title);
+            var formattedDegree = HTMLschoolDegree.replace("%data%", edu.schools[i].degree);
+            var formattedSchoolDates = HTMLschoolDates.replace("%data%", edu.schools[i].dates);
+            var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", edu.schools[i].location);
+            var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", edu.schools[i].major[0]);
+            $(".education-entry:last").append(formattedSchoolName + formattedDegree);
+            $(".education-entry:last").append(formattedSchoolDates);
+            $(".education-entry:last").append(formattedSchoolLocation);
+            $(".education-entry:last").append(formattedSchoolMajor);
+        }
+    }
+};
+
+var projects = {
+    "activity": [{
+            "title": "Udacity About Me",
+            "dates": "2015",
+            "description": "Create About Me personal page",
+            "image": ""
+        },
+        {
+            "title": "Udacity About Me",
+            "dates": "2015",
+            "description": "Create About Me personal page",
+            "image": ""
+        },
+        {
+            "title": "Udacity About Me",
+            "dates": "2015",
+            "description": "Create About Me personal page",
+            "image": ""
+        },
+        {
+            "title": "Udacity About Me",
+            "dates": "2015",
+            "description": "Create About Me personal page",
+            "image": ""
+        }
+    ]
+};
+
+projects.display = function () {
+    if (projects.activity.length > 0) {
+        for (var i = 0; i < projects.activity.length; i++) {
+            $("#projects").append(HTMLprojectStart);
+            var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.activity[i].title);
+            var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.activity[i].dates);
+            var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.activity[i].description);
+            var formattedProjectImagen = HTMLprojectImage.replace("%data%", projects.activity[i].image);
+            $(".project-entry:last").append(formattedProjectTitle);
+            $(".project-entry:last").append(formattedProjectDates);
+            $(".project-entry:last").append(formattedProjectDescription);
+            $(".project-entry:last").append(formattedProjectImagen);
+        }
+    }
+};
+
+var map = {
+    "activity": [{
+        "title": "OS 20. Oktobar",
+        "dates": "1991",
+        "description": "Serbia, Belgrade",
+        "image": ""
+    },
+        {
+            "title": "LINK Computers",
+            "dates": "2005",
+            "description": "Serbia, Belgrade",
+            "image": ""
+        },
+        {
+            "title": "Microsoft",
+            "dates": "2010",
+            "description": "Serbia, Belgrade",
+            "image": ""
+        },
+        {
+            "title": "Udacity",
+            "dates": "2015-2016",
+            "description": "Serbia, Belgrade",
+            "image": ""
+        }
+    ]
+};
+
+$("#mapDiv").append(googleMap);
 
 work.display();
+projects.display();
+edu.display();
