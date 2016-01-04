@@ -40,7 +40,7 @@ var HTMLprojectStart = '<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 text-cen
 var HTMLprojectTitle = '<a class="title" href="#">%data%</a>';
 var HTMLprojectDates = '<div class="text-center">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<img class="img-responsive" src="%data%">';
+var HTMLprojectImage = '<div>%data%</div>';
 
 var HTMLschoolStart = '<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3"><div class="education-entry"></div></div>';
 var HTMLschoolName = '<a class="title pull-left" href="#">%data%';

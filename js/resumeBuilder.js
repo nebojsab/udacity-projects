@@ -152,28 +152,28 @@ edu.display = function () {
 
 var projects = {
     "activity": [{
-        "title": "Udacity About Me",
-        "dates": "2015",
-        "description": "Create About Me personal page",
-        "image": "images/project.png"
-    },
-        {
             "title": "Udacity About Me",
             "dates": "2015",
-            "description": "Create About Me personal page",
-            "image": "images/project.png"
+            "description": "About Me personal page created for Udacity nanodegree",
+            "image": "<a href='http://codepen.io/anon/pen/meLYra' target='_blank'><img class='img-responsive' src='images/project.png'></a>"
         },
         {
-            "title": "Udacity About Me",
-            "dates": "2015",
-            "description": "Create About Me personal page",
-            "image": "images/project.png"
+            "title": "Embroker",
+            "dates": "2015-2016",
+            "description": "Embroker Insurance App - Website Web Design",
+            "image": "<a href='https://embroker.com/' target='_blank'><img class='img-responsive' src='images/project_04.png'></a>"
         },
         {
-            "title": "Udacity About Me",
-            "dates": "2015",
-            "description": "Create About Me personal page",
-            "image": "images/project.png"
+            "title": "Kiropraktor Glostrup",
+            "dates": "2013",
+            "description": "Chiropractic clinic Website - Copenhagen Denmark.",
+            "image": "<a href='http://kiropraktorglostrup.dk/' target='_blank'><img class='img-responsive' src='images/project_03.png'></a>"
+        },
+        {
+            "title": "EDC Pocket Knives",
+            "dates": "2013",
+            "description": "Amazon Affiliate shop for EDC Knives made in Wordpress.",
+            "image": "<a href='http://edc-pocketknives.com/' target='_blank'><img class='img-responsive' src='images/project_02.png'></a>"
         }
     ]
 };
