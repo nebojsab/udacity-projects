@@ -19,9 +19,40 @@
   float: left;
 }
 
+#topContacts li span a{
+  margin-top: 0px;
+  color: #fff !important;
+  display: inline-block;
+  text-decoration: underline;
+}
+
 .education-entry, .work-entry, .project-entry {
   padding-left: 5%;
   padding-right: 5%;
+}
+
+.work-entry{
+  height: 100%;
+  display: inline-block;
+  position: relative;
+  min-height: 220px;
+}
+
+.education-entry .location-text{
+  position: absolute;
+  bottom: 5px;
+}
+
+.education-entry{
+  height: 100%;
+  display: inline-block;
+  position: relative;
+  min-height: 120px;
+}
+
+.work-entry .location-text{
+  position: absolute;
+  bottom: 5px;
 }
 
 .project-entry{

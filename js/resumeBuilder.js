@@ -10,12 +10,12 @@ var personal = {
     name: "Nebojsa Brnjasevic",
     role: "Web Developer",
     contacts: {
-        mobile: "+381.64.70.10.981",
-        email: "nebojsa.brnjasevic@gmail.com",
-        twitter: "@nebojsab",
-        github: "https://github.com/nebojsab",
-        www: "http://www.websurfart.com",
-        location: "Serbia, Novi Banovci"
+        mobile: "<a href='tel:+381.64.70.10.981'>+381.64.70.10.981</a>",
+        email: "<a href='mailto:nebojsa.brnjasevic@gmail.com'>nebojsa.brnjasevic@gmail.com</a>",
+        twitter: "<a href='https://twitter.com/brnjasevic' target='_blank'>@brnjasevic</a>",
+        github: "<a href='https://github.com/nebojsab' target='_blank'>https://github.com/nebojsab</a>",
+        www: "<a href='http://www.websurfart.com' target='_blank'>http://www.websurfart.com</a>",
+        location: "<a href='https://www.google.rs/maps/place/%D0%9D%D0%BE%D0%B2%D0%B8+%D0%91%D0%B0%D0%BD%D0%BE%D0%B2%D1%86%D0%B8/@44.9465932,20.2856993,15.5z/data=!4m2!3m1!1s0x475a5e523f2991ef:0x87580219af315ef7?hl=sr' target='_blank'>Serbia, Novi Banovci</a>"
     },
     biopic: "images/profileImg.jpg",
     welcome: "Welcome to my Online Resume",
