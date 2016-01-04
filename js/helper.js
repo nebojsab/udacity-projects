@@ -93,16 +93,15 @@ $(document).click(function(loc) {
 
 
 /*
-This is the fun part. Here's where we generate the custom Google Map for the website.
-See the documentation below for more details.
-https://developers.google.com/maps/documentation/javascript/reference
-*/
-var map;    // declares a global map variable
-
+ Generate the custom Google Map for the website.
+ See the documentation below for more details.
+ https://developers.google.com/maps/documentation/javascript/reference
+ */
+var map;
 
 /*
-Start here! initializeMap() is called when page is loaded.
-*/
+ initializeMap() is called when page is loaded.
+ */
 function initializeMap() {
 
   var locations;
@@ -111,15 +110,17 @@ function initializeMap() {
     disableDefaultUI: true
   };
 
-  // This next line makes `map` a new Google Map JavaScript Object and attaches it to
-  // <div id="map">, which is appended as part of an exercise late in the course.
+  /*
+   For the map to be displayed, the googleMap var must be
+   appended to #mapDiv in resumeBuilder.js.
+   */
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
 
 
   /*
-  locationFinder() returns an array of every location string from the JSONs
-  written for bio, education, and work.
-  */
+   locationFinder() returns an array of every location string from the JSONs
+   written for bio, education, and work.
+   */
   function locationFinder() {
 
     // initializes an empty array
@@ -130,7 +131,7 @@ function initializeMap() {
 
     // iterates through school locations and appends each location to
     // the locations array
-    for (var school in education.schools) {
+    for (var school in edu.schools) {
       locations.push(edu.schools[school].location);
     }
 
@@ -144,17 +145,17 @@ function initializeMap() {
   }
 
   /*
-  createMapMarker(placeData) reads Google Places search results to create map pins.
-  placeData is the object returned from search results containing information
-  about a single location.
-  */
+   createMapMarker(placeData) reads Google Places search results to create map pins.
+   placeData is the object returned from search results containing information
+   about a single location.
+   */
   function createMapMarker(placeData) {
 
     // The next lines save location data from the search result object to local variables
-    var lat = placeData.geometry.location.k;  // latitude from the place service
-    var lon = placeData.geometry.location.D;  // longitude from the place service
-    var name = placeData.formatted_address;   // name of the place from the place service
-    var bounds = window.mapBounds;            // current boundaries of the map window
+    var lat = placeData.geometry.location.lat();
+    var lon = placeData.geometry.location.lng();
+    var name = placeData.formatted_address;
+    var bounds = window.mapBounds;
 
     // marker is an object with additional data about the pin for a single location
     var marker = new google.maps.Marker({
@@ -170,9 +171,8 @@ function initializeMap() {
       content: name
     });
 
-    // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
-      // your code goes here!
+      infoWindow.open(map, marker);
     });
 
     // this is where the pin actually gets added to the map.
@@ -185,9 +185,9 @@ function initializeMap() {
   }
 
   /*
-  callback(results, status) makes sure the search returned results for a location.
-  If so, it creates a new map marker for that location.
-  */
+   callback(results, status) makes sure the search returned results for a location.
+   If so, it creates a new map marker for that location.
+   */
   function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
       createMapMarker(results[0]);
@@ -195,9 +195,9 @@ function initializeMap() {
   }
 
   /*
-  pinPoster(locations) takes in the array of locations created by locationFinder()
-  and fires off Google place searches for each location
-  */
+   pinPoster(locations) takes in the array of locations created by locationFinder()
+   and fires off Google place searches for each location
+   */
   function pinPoster(locations) {
 
     // creates a Google place search service object. PlacesService does the work of
@@ -231,15 +231,15 @@ function initializeMap() {
 }
 
 /*
-Uncomment the code below when you're ready to implement a Google Map!
-*/
+ Uncomment the code below when you're ready to implement a Google Map!
+ */
 
 // Calls the initializeMap() function when the page loads
-//window.addEventListener('load', initializeMap);
+window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
-//window.addEventListener('resize', function(e) {
-  // Make sure the map bounds get updated on page resize
-//  map.fitBounds(mapBounds);
-//});
+window.addEventListener('resize', function(e) {
+  //Make sure the map bounds get updated on page resize
+  map.fitBounds(mapBounds);
+});
