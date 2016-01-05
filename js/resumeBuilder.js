@@ -1,10 +1,5 @@
-//$("#main").append(["Nebojsa Brnjasevic"]);
-//
-//var awesomeThoughts = "I am Nebojsa, and I am AWESOME!!!";
-//
-//var funThoughs = awesomeThoughts.replace("AWESOME","FUN");
 
-//variable objects
+//header section (contact info and bio
 
 var personal = {
     name: "Nebojsa Brnjasevic",
@@ -33,6 +28,7 @@ var formattedLocation = HTMLlocation.replace("%data%", personal.contacts.locatio
 var formattedPic = HTMLbioPic.replace("%data%", personal.biopic);
 var formattedWelcome = HTMLWelcomeMsg.replace("%data%", personal.welcome);
 
+
 $("#header").append(formattedName);
 $("#header").append(formattedRole);
 $("#topContacts").prepend(formattedMobile);
@@ -57,6 +53,10 @@ if (personal.skills.length > 0) {
         $("#skills").append(fortmattedSkills);
     }
 }
+
+//end personal
+
+//work details section
 
 var work = {
     "carrier": [{
@@ -107,6 +107,10 @@ work.display = function () {
     }
 };
 
+//end work section
+
+//education section
+
 var edu = {
     "schools": [{
         "title": "OS 20. Oktobar",
@@ -149,6 +153,10 @@ edu.display = function () {
         }
     }
 };
+
+//end education section
+
+//projects section
 
 var projects = {
     "activity": [{
@@ -194,35 +202,13 @@ projects.display = function () {
     }
 };
 
-var map = {
-    "activity": [{
-        "title": "OS 20. Oktobar",
-        "dates": "1991",
-        "description": "Serbia, Belgrade",
-        "image": ""
-    },
-        {
-            "title": "LINK Computers",
-            "dates": "2005",
-            "description": "Serbia, Belgrade",
-            "image": ""
-        },
-        {
-            "title": "Microsoft",
-            "dates": "2010",
-            "description": "Serbia, Belgrade",
-            "image": ""
-        },
-        {
-            "title": "Udacity",
-            "dates": "2015-2016",
-            "description": "Serbia, Belgrade",
-            "image": ""
-        }
-    ]
-};
+//end projects section
+
+//append Google map to #mapDiv element
 
 $("#mapDiv").append(googleMap);
+
+//initialize functions
 
 work.display();
 projects.display();
