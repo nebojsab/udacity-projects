@@ -46,14 +46,14 @@ var HTMLschoolStart = '<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3"><div cla
 var HTMLschoolName = '<a class="title pull-left" href="#">%data%';
 var HTMLschoolDegree = ' - %data%</a>';
 var HTMLschoolDates = '<div class="date-text pull-left">%data%</div>';
-var HTMLschoolMajor = '<em><br>Major: %data%</em>';
+var HTMLschoolMajor = '<em><br><p>Major: %data%</p></em>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 
 var HTMLonlineClasses = '<h3>Online Classes</h3>';
-var HTMLonlineTitle = '<a href="#">%data%';
+var HTMLonlineTitle = '<a class="title pull-left" href="#">%data%';
 var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<br><a href="#">%data%</a>';
+var HTMLonlineURL = '<br><a href="https://www.udacity.com" target="_blank">%data%</a>';
 
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
@@ -127,18 +127,18 @@ function initializeMap() {
     var locations = [];
 
     // adds the single location property from bio to the locations array
-    locations.push(personal.contacts.location);
+    locations.push(bio.contacts.location);
 
     // iterates through school locations and appends each location to
     // the locations array
-    for (var school in edu.schools) {
-      locations.push(edu.schools[school].location);
+    for (var school in education.schools) {
+      locations.push(education.schools[school].location);
     }
 
     // iterates through work locations and appends each location to
     // the locations array
-    for (var job in work.carrier) {
-      locations.push(work.carrier[job].location);
+    for (var job in work.jobs) {
+      locations.push(work.jobs[job].location);
     }
 
     return locations;

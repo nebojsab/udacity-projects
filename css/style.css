@@ -46,7 +46,10 @@
 
 .education-entry .location-text{
   position: absolute;
-  bottom: 5px;
+  bottom: -10px;
+}
+.education-entry p{
+  margin-bottom: 10px;
 }
 
 .education-entry{
